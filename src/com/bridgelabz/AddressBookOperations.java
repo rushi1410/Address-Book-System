@@ -27,6 +27,7 @@ public class AddressBookOperations {
 
 	}
 	public void editContact() {
+
 		System.out.println("Enter the first name of person to edit:");
 		String firstName = sc.next();
 		if (firstName.equals(contact.getFirstName())) {
@@ -38,8 +39,8 @@ public class AddressBookOperations {
 			contact.setLastName(sc.next());
 
 			System.out.println("Enter address:");
-	        contact.setAddress(sc.next());
-	        
+			contact.setAddress(sc.next());
+
 			System.out.println("Enter city:");
 			contact.setCity(sc.next());
 
@@ -48,7 +49,7 @@ public class AddressBookOperations {
 
 			System.out.println("Enter zip Code:");
 			contact.setZip(sc.next());
-			
+
 			System.out.println("Enter phone number:");
 			contact.setPhoneNumber(sc.next());
 
@@ -58,6 +59,21 @@ public class AddressBookOperations {
 		} else {
 			System.out.println("Person not found");
 		}
+	}
+
+	public void deleteContact(){
+
+		System.out.println("Enter the first name of person to delete");
+		String firstName = sc.next();
+
+		if (firstName.equals(contact.getFirstName())){
+			contact=null;
+			System.out.println("Deleted Contact");
+		}
+		else{
+			System.out.println("no contact found");
+		}
+
 	}
 
 	Contact display() {
