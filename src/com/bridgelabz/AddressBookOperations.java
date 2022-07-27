@@ -6,6 +6,11 @@ import java.util.Scanner;
 public class AddressBookOperations {
 	ArrayList<Contact> list = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
+
+	@Override
+	public String toString() {
+		return "AddressBookOperations [list=" + list + "]";
+	}
 	public void addContact() {
 		Contact contact = new Contact();
 		System.out.println("Enter first name:");
