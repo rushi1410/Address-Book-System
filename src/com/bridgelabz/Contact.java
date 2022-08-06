@@ -17,6 +17,17 @@ public class Contact {
 		this.emailId = emailId;
 	}
 
+
+    public Contact(String firstName, String lastName, String address, String cityName, String zipcode, String phoneNumber, String emailID) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = cityName;
+        this.zip = zipcode;
+        this.phoneNumber = phoneNumber;
+        this.emailId = emailID;
+    }
+    
 	private String firstName;
 	private String lastName;
 	private String address;
