@@ -18,6 +18,7 @@ public class AddressBook {
 	public void setAddressBook(ArrayList<Contact> addressBook) {
 		this.addressBook = addressBook;
 	}
+
 	public boolean checkDuplicateEntry(Contact contact) {
 		boolean status = false;
 		for (Contact person : addressBook) {
@@ -96,6 +97,7 @@ public class AddressBook {
 			}
 		}
 	}
+
 	public void deleteContact(String firstname) {
 		String deleteName;
 		for (Contact contact : addressBook) {

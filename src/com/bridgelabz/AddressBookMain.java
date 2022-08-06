@@ -7,9 +7,11 @@ public class AddressBookMain {
 	public static Map<String, AddressBook> addressBookHashMap = new HashMap<>();
 	Scanner scanner = new Scanner(System.in);
 
+
 	public void addDataToAddressBook() {
 
 		String chooseContact, chooseCity;
+
 
 		do {
 			System.out.println("Enter the name of city");
@@ -78,8 +80,17 @@ public class AddressBookMain {
 		System.out.println(count1 + " Contacts in " + city);
 	}
 
+	public static void sortByName() {
+		List<Contact> list = new ArrayList<>();
+		for (Map.Entry<String, AddressBook> entries : addressBookHashMap.entrySet()) {
+			list = new ArrayList<>(entries.getValue().getAddressBook());
+		}
+		list.stream().sorted((p1, p2) -> ((String)p1.getFirstName()).compareTo(p2.getFirstName()))
+		.forEach(contact -> System.out.println(contact.getFirstName()+" "+contact.getLastName()));
+	}
+
 	public static void main(String[] args) {
-		System.out.println("Welcome To AddressBook System");
+		System.out.println(" Welcome To AddressBook System ");
 		Scanner scanner = new Scanner(System.in);
 		int choice;
 
@@ -152,8 +163,11 @@ public class AddressBookMain {
 				String city4 = scanner.next();
 				getCountByCity(city4);
 				break;
-
 			case 7:
+				sortByName();
+				break;
+
+			case 8:
 				for (Map.Entry<String,AddressBook> entry : addressBookHashMap.entrySet()) {
 					System.out.println(entry.getKey() + "\t" + entry.getValue().getAddressBook()); }
 			}

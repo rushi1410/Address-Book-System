@@ -99,6 +99,20 @@ public class Contact {
 		this.emailId = emailId;
 	}
 
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean result = false;
+
+		if(obj == this) {
+			return true;
+		}
+		Contact contact = (Contact)obj; 
+		if(contact.firstName.equals(this.firstName) && contact.lastName.equals(this.lastName)) {
+			result = true;
+		}
+		return result;
+	}
 	@Override
 	public String toString() {
 		return "Contact [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
